@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Menu;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,6 +14,9 @@ return new class extends Migration
     {
         Schema::create('sub_menus', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Menu::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string('text');
+            $table->string('url');
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SubMenu;
 use App\Http\Requests\StoreSubMenuRequest;
 use App\Http\Requests\UpdateSubMenuRequest;
+use App\Models\Menu;
 
 class SubMenuController extends Controller
 {
@@ -13,47 +14,26 @@ class SubMenuController extends Controller
      */
     public function index()
     {
-        //
+        $subMenus = SubMenu::all();
+        $menus = Menu::all();
+        return view('admin.sub-menu',compact(['subMenus','menus']));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreSubMenuRequest $request)
     {
-        //
+        $subMenu = new SubMenu();
+        $subMenu->menu_id = $request->menu_id;
+        $subMenu->text = $request->text;
+        $subMenu->url = $request->url;
+        $subMenu->save();
+        return back()->with('msg', 'Successfully stored');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(SubMenu $subMenu)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(SubMenu $subMenu)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateSubMenuRequest $request, SubMenu $subMenu)
     {
-        //
+        $subMenu->text = $request->text;
+        $subMenu->url = $request->url;
+        $subMenu->save();
+        return back()->with('msg', 'Successfully stored');
     }
 
     /**
@@ -61,6 +41,7 @@ class SubMenuController extends Controller
      */
     public function destroy(SubMenu $subMenu)
     {
-        //
+        $subMenu->delete();
+        return back();
     }
 }

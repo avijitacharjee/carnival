@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SubMenuController;
 use App\Models\About;
 use App\Models\Menu;
 use App\Models\Product;
@@ -42,4 +43,5 @@ Route::group([
     Route::resource('about', AboutController::class);
     Route::resource('product', ProductController::class);
     Route::resource('menu',MenuController::class);
+    Route::resource('submenu',SubMenuController::class);
 });

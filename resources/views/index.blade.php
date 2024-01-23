@@ -101,7 +101,16 @@
                             <nav id="main-menu" class="main-menu">
                                 <ul>
                                     @foreach ($menus as $menu)
-                                        <li><a href="{{ url($menu->url) }}">{{$menu->text}}</a></li>
+                                        <li><a href="{{ url($menu->url) }}">{{ $menu->text }}</a>
+                                            @if ($menu->subMenus->count() > 0)
+                                                <ul>
+                                                    @foreach ($menu->subMenus as $subMenu)
+                                                        <li><a href="{{ url($subMenu->url) }}">{{ $subMenu->text }}
+                                                            </a></li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </li>
                                     @endforeach
                                     {{-- <li><a href="{{ url('#') }}">About Us</a></li>
                                     <li><a href="{{ url('#') }}">Products</a>
