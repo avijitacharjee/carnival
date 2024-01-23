@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 use App\Models\About;
+use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $sliders = Slider::all();
     $abouts = About::all();
-    return view('index', compact(['sliders','abouts']));
+    $products = Product::all();
+    return view('index', compact(['sliders','abouts','products']));
 });
 Route::group([
     'prefix' => 'admin'
@@ -34,4 +37,5 @@ Route::group([
         Route::post('slider/edit/{slider}', 'updateSlider');
     });
     Route::resource('about', AboutController::class);
+    Route::resource('product', ProductController::class);
 });

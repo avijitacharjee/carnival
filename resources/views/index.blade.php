@@ -293,159 +293,26 @@ Welcome to CARNIVAL OFFSET PRINTERS LTD. We thank you for taking your time to vi
                 </div>
             </div>
             <div class="row">
+                @foreach ($products as $product)
                 <!-- Single project Inner Start -->
                 <div class="col-md-3 col-sm-6 inner">
                     <div class="single-project-inner">
                         <div class="project-thumb">
-                            <img src="{{ asset('/img/products/1.jpg') }}" alt="" />
+                            <img src="{{ asset($product->image) }}" alt="" />
                             <div class="project-thumb-overlay">
                                 <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
+                                    <a href="{{ url($product->url) }}"><i class="icofont-external-link"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">HEAT TRANSFER LABELS</a></h2>
-                            <p>Heat Transfer Label is an excellent way of printing patterns on customized and
-                                personalized commodities, and printing patterns that contain full-color photos or
-                                images.</p>
+                            <h2><a href="{{ url('#') }}">{{$product->title}}</a></h2>
+                            <p>{{$product->description}}.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/24.png') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Reflective Heat Transfer Label</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/4.jpg') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Heat Transfer Highdency Label</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/2.jpg') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Garments Care Label</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/hang.png') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Hang Tags</a></h2>
-                            <p>Hang tags are beneficial for the details that are important to a customer such as sizing,
-                                pricing and brand. But they are so much more than that in today’s bustling retail
-                                industry.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/21.png') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Barcode & price sticker</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/22.png') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Silica Gel</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset('/img/products/23.png') }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url('#') }}"><i class="icofont-external-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">Graphics Design Solution</a></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
+                <!-- Single project Inner end-->
+                @endforeach
             </div>
         </div>
     </div>
