@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProductController;
 use App\Models\About;
+use App\Models\Menu;
 use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +25,8 @@ Route::get('/', function () {
     $sliders = Slider::all();
     $abouts = About::all();
     $products = Product::all();
-    return view('index', compact(['sliders','abouts','products']));
+    $menus = Menu::all();
+    return view('index', compact(['sliders','abouts','products','menus']));
 });
 Route::group([
     'prefix' => 'admin'
@@ -38,4 +41,5 @@ Route::group([
     });
     Route::resource('about', AboutController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('menu',MenuController::class);
 });

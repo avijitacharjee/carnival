@@ -100,8 +100,10 @@
                         <div class="menu">
                             <nav id="main-menu" class="main-menu">
                                 <ul>
-                                    <li class="active"><a href="{{ url('index.html') }}">Home</a></li>
-                                    <li><a href="{{ url('#') }}">About Us</a></li>
+                                    @foreach ($menus as $menu)
+                                        <li><a href="{{ url($menu->url) }}">{{$menu->text}}</a></li>
+                                    @endforeach
+                                    {{-- <li><a href="{{ url('#') }}">About Us</a></li>
                                     <li><a href="{{ url('#') }}">Products</a>
                                         <ul>
                                             <li><a href="{{ url('#') }}">HEAT TRANSFER LABELS </a></li>
@@ -116,9 +118,7 @@
                                     <li><a href="{{ url('#') }}">Photo Gallery</a></li>
                                     <li><a href="{{ url('#') }}">Certifications</a></li>
 
-                                    <li><a href="{{ url('#') }}">Contact</a></li>
-
-
+                                    <li><a href="{{ url('#') }}">Contact</a></li> --}}
                                 </ul>
                             </nav>
                         </div>
@@ -221,9 +221,9 @@ Welcome to CARNIVAL OFFSET PRINTERS LTD. We thank you for taking your time to vi
                             <div class="service-cat-desc">
                                 <span class="service-cat-icon"><i class="icofont-recycle-alt"></i></span>
                                 <div class="service-cat-title">
-                                    <h2><a href="{{ url($about->url) }}">{{$about->title}}</a></h2>
+                                    <h2><a href="{{ url($about->url) }}">{{ $about->title }}</a></h2>
                                 </div>
-                                <p>{{$about->description}}</p>
+                                <p>{{ $about->description }}</p>
                                 <a href="{{ url('#') }}" class="service-cat-redmore">View Details <i
                                         class="icofont-thin-right"></i></a>
                             </div>
@@ -294,24 +294,24 @@ Welcome to CARNIVAL OFFSET PRINTERS LTD. We thank you for taking your time to vi
             </div>
             <div class="row">
                 @foreach ($products as $product)
-                <!-- Single project Inner Start -->
-                <div class="col-md-3 col-sm-6 inner">
-                    <div class="single-project-inner">
-                        <div class="project-thumb">
-                            <img src="{{ asset($product->image) }}" alt="" />
-                            <div class="project-thumb-overlay">
-                                <div class="project-icon">
-                                    <a href="{{ url($product->url) }}"><i class="icofont-external-link"></i></a>
+                    <!-- Single project Inner Start -->
+                    <div class="col-md-3 col-sm-6 inner">
+                        <div class="single-project-inner">
+                            <div class="project-thumb">
+                                <img src="{{ asset($product->image) }}" alt="" />
+                                <div class="project-thumb-overlay">
+                                    <div class="project-icon">
+                                        <a href="{{ url($product->url) }}"><i class="icofont-external-link"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="project-inner-desc">
-                            <h2><a href="{{ url('#') }}">{{$product->title}}</a></h2>
-                            <p>{{$product->description}}.</p>
+                            <div class="project-inner-desc">
+                                <h2><a href="{{ url('#') }}">{{ $product->title }}</a></h2>
+                                <p>{{ $product->description }}.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Single project Inner end-->
+                    <!-- Single project Inner end-->
                 @endforeach
             </div>
         </div>

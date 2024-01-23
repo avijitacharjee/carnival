@@ -499,6 +499,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="menu" class="nav-link">
+                                <i class="nav-icon fas fa-warehouse"></i>
+                                <p>
+                                    Menu
+                                </p>
+                            </a>
+                        </li>
                         {{-- <li class="nav-item">
                             <a href="/notifications" class="nav-link">
                                 <i class="nav-icon fa fa-bell"></i>
