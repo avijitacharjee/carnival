@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $sliders = Slider::all();
+    return view('index',compact(['sliders']));
+});
+Route::group([
+    'controller' => AdminController::class,
+    'prefix' => 'admin'
+], function () {
+    Route::get('dashboard', 'dashboard');
+    Route::get('sliders','sliders');
+    Route::post('slider','storeSlider');
+    Route::post('slider/edit/{slider}', 'updateSlider');
 });
